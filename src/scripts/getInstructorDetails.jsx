@@ -1,5 +1,5 @@
 const getInstructorDetails = async (instructorUsername) => {
-  const apiUrl = `${import.meta.env.VITE_API_URL}/instructor/${instructorUsername}`;
+  const apiUrl = `${import.meta.env.VITE_API_URL}/instructor/${instructorUsername.toLowerCase()}`;
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {

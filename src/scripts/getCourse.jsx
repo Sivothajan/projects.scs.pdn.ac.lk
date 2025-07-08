@@ -1,5 +1,5 @@
 export const getCourse = async (courseId) => {
-  const apiUrl = `${import.meta.env.VITE_API_URL}/courses/${courseId}`;
+  const apiUrl = `${import.meta.env.VITE_API_URL}/courses/${courseId.toLowerCase()}`;
 
   if (!import.meta.env.VITE_API_URL) {
     throw new Error("VITE_API_URL is not defined in environment variables");
