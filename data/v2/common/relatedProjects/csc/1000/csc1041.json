@@ -1,0 +1,25 @@
+[
+  {
+    "id": "CSC1041-2025-040",
+    "name": "Code Debugging Challenge",
+    "courseCode": "CSC1041",
+    "instructor": "Ian Campbell",
+    "instructorLink": "/instructor/ian-sci",
+    "academicYear": 2025,
+    "description": "Solve a set of buggy programs to improve debugging skills.",
+    "projectLink": "https://github.com/pdn-scs/debug-challenge",
+    "coverImageUrl": "/images/course-cover-images/CSC.webp",
+    "authors": [
+      {
+        "name": "Andrew White",
+        "link": "/student/S20302",
+        "sNumber": "S20302"
+      },
+      {
+        "name": "Benjamin Ward",
+        "link": "/student/S20314",
+        "sNumber": "S20314"
+      }
+    ]
+  }
+]

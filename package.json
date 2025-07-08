@@ -1,0 +1,87 @@
+{
+  "name": "projects.scs.pdn.ac.lk",
+  "private": true,
+  "authors": [
+    {
+      "name": "Hana",
+      "studentId": "S/21/063"
+    },
+    {
+      "name": "Ansaf",
+      "studentId": "S/21/315"
+    },
+    {
+      "name": "Arani",
+      "studentId": "S/21/317"
+    },
+    {
+      "name": "Danchika",
+      "studentId": "S/21/340"
+    },
+    {
+      "name": "Karunarathne",
+      "studentId": "S/21/413"
+    },
+    {
+      "name": "Premashalini",
+      "studentId": "S/21/466"
+    },
+    {
+      "name": "Romesh",
+      "studentId": "S/21/489"
+    },
+    {
+      "name": "Shahama",
+      "studentId": "S/21/490"
+    },
+    {
+      "name": "Samadh",
+      "studentId": "S/21/493"
+    },
+    {
+      "name": "Sivothayan",
+      "studentId": "S/21/513"
+    },
+    {
+      "name": "Thushan",
+      "studentId": "S/21/528"
+    }
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "cross-env NODE_ENV=production vite build",
+    "lint": "eslint .",
+    "preview": "vite preview --host",
+    "format": "prettier --write .",
+    "analyze": "vite build && open-cli /stats.html"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "@eslint/js": "^9.30.1",
+    "@vitejs/plugin-react": "^4.6.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "open-cli": "^8.0.0",
+    "prettier": "^3.6.2",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "vite": "^7.0.3",
+    "vite-plugin-inspect": "^11.3.0"
+  }
+}

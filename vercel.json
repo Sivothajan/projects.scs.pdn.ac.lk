@@ -1,0 +1,57 @@
+{
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
+        }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/apiRouter",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/v1/apiRouter",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/v2/apiRouter",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "src": "/api/v2/(.*)",
+      "dest": "/api/v2/apiRouter"
+    },
+    {
+      "src": "/api/v1/(.*)",
+      "dest": "/api/v1/apiRouter"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/apiRouter"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "favicon/favicon.ico"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

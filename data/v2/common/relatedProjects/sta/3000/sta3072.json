@@ -1,0 +1,48 @@
+[
+  {
+    "id": "STA3072-2025-008",
+    "name": "Weather Forecasting Model",
+    "courseCode": "STA3072",
+    "instructor": "Rachel Stevens",
+    "instructorLink": "/instructor/rachel-sci",
+    "academicYear": 2025,
+    "description": "Create a model to forecast weather patterns using time series data.",
+    "projectLink": "https://projects.sci.pdn.ac.lk/weather-forecast",
+    "coverImageUrl": "/images/course-cover-images/STA.webp",
+    "authors": [
+      {
+        "name": "Emma Phillips",
+        "link": "/student/S20364",
+        "sNumber": "S20364"
+      },
+      {
+        "name": "Diana Nelson",
+        "link": "/student/S20375",
+        "sNumber": "S20375"
+      }
+    ]
+  },
+  {
+    "id": "STA3072-2025-048",
+    "name": "Stock Price Predictor",
+    "courseCode": "STA3072",
+    "instructor": "Rachel Stevens",
+    "instructorLink": "/instructor/rachel-sci",
+    "academicYear": 2025,
+    "description": "Forecast stock prices using time series analysis methods.",
+    "projectLink": "https://projects.sci.pdn.ac.lk/stock-predictor",
+    "coverImageUrl": "/images/course-cover-images/STA.webp",
+    "authors": [
+      {
+        "name": "Peter Collins",
+        "link": "/student/S20326",
+        "sNumber": "S20326"
+      },
+      {
+        "name": "Grace Edwards",
+        "link": "/student/S20345",
+        "sNumber": "S20345"
+      }
+    ]
+  }
+]

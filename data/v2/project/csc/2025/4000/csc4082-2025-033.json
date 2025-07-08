@@ -1,0 +1,25 @@
+[
+  {
+    "id": "CSC4082-2025-033",
+    "name": "Object Recognition System",
+    "courseCode": "CSC4082",
+    "instructor": "Jennifer Mitchell",
+    "instructorLink": "/instructor/jennifer-sci",
+    "academicYear": 2025,
+    "description": "Develop a system to identify objects in images using OpenCV.",
+    "projectLink": "https://github.com/pdn-scs/object-recognition",
+    "coverImageUrl": "/images/course-cover-images/CSC.webp",
+    "authors": [
+      {
+        "name": "Charlotte Davies",
+        "link": "/student/S19346",
+        "sNumber": "S19346"
+      },
+      {
+        "name": "Harry Wilson",
+        "link": "/student/S19588",
+        "sNumber": "S19588"
+      }
+    ]
+  }
+]
