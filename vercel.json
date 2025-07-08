@@ -18,20 +18,6 @@
       ]
     }
   ],
-  "builds": [
-    {
-      "src": "api/apiRouter",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/v1/apiRouter",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/v2/apiRouter",
-      "use": "@vercel/node"
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/v2/(.*)",
