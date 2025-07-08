@@ -58,7 +58,7 @@ const fetchData = async (reqPath, filePath, jsonName, githubUrl) => {
     } else if (reqPath.startsWith("/api/v2/projects")) {
       // All projects (if needed)
       localPath = LOCAL_COMMON_PATH;
-    } else if (reqPath.startsWith("/api/v2/relatedProjects/")) {
+    } else if (reqPath.startsWith("/api/v2/relatedprojects/")) {
       localPath = LOCAL_COMMON_PATH + "/relatedProjects";
     } else {
       throw new Error("Unknown data source URL");
@@ -218,7 +218,7 @@ v2Router.get("/api/v2/projects/cc/:courseCode", async (req, res) => {
     if (/^[0-9]$/.test(courseCategory)) {
       courseCategory += "000";
     }
-    const coursePath = `relatedProjects/${coursePrefix}/${courseCategory}`;
+    const coursePath = `relatedprojects/${coursePrefix}/${courseCategory}`;
     const projects = await fetchData(
       "/api/v2/projects/cc/",
       coursePath,
