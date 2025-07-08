@@ -222,7 +222,7 @@ v2Router.get("/api/v2/projects/cc/:courseCode", async (req, res) => {
     const projects = await fetchData(
       "/api/v2/projects/cc/",
       coursePath,
-      courseCode,
+      courseCode.toLowerCase(),
       COMMON_URL,
     );
     if (!projects || projects.length === 0) {
