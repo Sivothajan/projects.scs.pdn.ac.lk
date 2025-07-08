@@ -13,7 +13,7 @@ v2Router.use(cors()); // Enable CORS for all routes
 v2Router.use(json());
 
 // Local data file paths
-const LOCAL_DATA_PATH = path.resolve(process.cwd(), "../data/v2");
+const LOCAL_DATA_PATH = path.resolve(process.cwd(), "../../data/v2");
 const LOCAL_COURSE_PATH = path.join(LOCAL_DATA_PATH, "/course");
 const LOCAL_INSTRUCTOR_PATH = path.join(LOCAL_DATA_PATH, "/instructor");
 const LOCAL_PROJECT_PATH = path.join(LOCAL_DATA_PATH, "/project");
