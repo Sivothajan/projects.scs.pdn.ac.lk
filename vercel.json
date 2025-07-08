@@ -34,20 +34,20 @@
   ],
   "rewrites": [
     {
-      "src": "/api/v2/(.*)",
-      "dest": "/api/v2/apiRouter"
+      "source": "/api/v2/(.*)",
+      "destination": "/api/v2/apiRouter"
     },
     {
-      "src": "/api/v1/(.*)",
-      "dest": "/api/v1/apiRouter"
+      "source": "/api/v1/(.*)",
+      "destination": "/api/v1/apiRouter"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/apiRouter"
+      "source": "/api/(.*)",
+      "destination": "/api/apiRouter"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "favicon/favicon.ico"
+      "source": "/favicon.ico",
+      "destination": "favicon/favicon.ico"
     },
     {
       "source": "/(.*)",
