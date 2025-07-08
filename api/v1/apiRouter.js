@@ -13,7 +13,7 @@ v1Router.use(cors()); // Enable CORS for all routes
 v1Router.use(json());
 
 // Local data file paths
-const LOCAL_DATA_PATH = path.resolve(process.cwd(), "../data/v1");
+const LOCAL_DATA_PATH = path.resolve(process.cwd(), "./data/v1");
 const LOCAL_COURSES_PATH = path.join(LOCAL_DATA_PATH, "courses.json");
 const LOCAL_INSTRUCTORS_PATH = path.join(LOCAL_DATA_PATH, "instructors.json");
 const LOCAL_PROJECTS_PATH = path.join(LOCAL_DATA_PATH, "projects.json");
