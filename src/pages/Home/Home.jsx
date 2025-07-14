@@ -53,6 +53,14 @@ function Home() {
           <a href="https://github.com/sivothajan/projects.scs.pdn.ac.lk-monorepo">
             GitHub
           </a>
+          <div className={styles.buttonsContainer}>
+            <button
+              onClick={() => navigate("/instructors")}
+              className={styles.instructorsButton}
+            >
+              Meet Our Instructors
+            </button>
+          </div>
         </div>
       </div>
       <section className={styles.coursesSection}>

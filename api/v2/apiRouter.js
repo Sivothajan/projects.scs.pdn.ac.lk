@@ -43,6 +43,8 @@ const fetchData = async (reqPath, filePath, jsonName, githubUrl) => {
     } else if (reqPath.startsWith("/api/v2/courses")) {
       // All courses
       localPath = LOCAL_COMMON_PATH;
+    } else if (reqPath.startsWith("/api/v2/instructors")) {
+      localPath = LOCAL_COMMON_PATH;
     } else if (reqPath.startsWith("/api/v2/instructor/")) {
       // Instructor by ID
       localPath = LOCAL_INSTRUCTOR_PATH;
@@ -287,6 +289,21 @@ v2Router.get("/api/v2/student/:studentId", async (req, res) => {
     res.status(200).json(student[0]);
   } catch (error) {
     console.error("Error fetching student:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+v2Router.get("/api/v2/instructors", async (req, res) => {
+  try {
+    const instructors = await fetchData(
+      "/api/v2/instructors",
+      "instructors.json",
+      "instructors",
+      COMMON_URL,
+    );
+    res.status(200).json(instructors);
+  } catch (error) {
+    console.error("Error fetching instructors:", error);
     res.status(500).json({ error: error.message });
   }
 });

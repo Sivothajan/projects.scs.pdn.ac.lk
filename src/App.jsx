@@ -7,6 +7,7 @@ import About from "./pages/About/About";
 import Documentation from "./pages/Documentation/Documentation";
 import Student from "./pages/Student/Student";
 import Instructor from "./pages/Instructor/Instructor";
+import Instructors from "./pages/Instructors/Instructors";
 import Course from "./pages/Course/Course";
 import Project from "./pages/Project/Project";
 
@@ -33,6 +34,11 @@ function App() {
           caseSensitive={false}
           path="/instructor/:instructorUsername"
           element={<Instructor />}
+        />
+        <Route
+          caseSensitive={false}
+          path="/instructors"
+          element={<Instructors />}
         />
         <Route
           caseSensitive={false}

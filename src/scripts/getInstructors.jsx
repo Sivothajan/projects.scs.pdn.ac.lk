@@ -1,5 +1,5 @@
-const getInstructorDetails = async (instructorUsername) => {
-  const apiUrl = `${import.meta.env.VITE_API_URL}/instructor/${instructorUsername.toLowerCase()}`;
+const getInstructorDetails = async () => {
+  const apiUrl = `${import.meta.env.VITE_API_URL}/instructors`;
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) {
@@ -8,7 +8,7 @@ const getInstructorDetails = async (instructorUsername) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching instructort details:", error);
+    console.error("Error fetching instructors details:", error);
     return null;
   }
 };
