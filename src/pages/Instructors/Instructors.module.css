@@ -121,6 +121,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
+  height: 100%;
   width: 100%;
   font-size: 2rem;
   background-color: #daa520;
