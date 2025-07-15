@@ -1,6 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto", sans-serif;
 }
 
@@ -22,9 +39,4 @@ a:visited {
 a:active {
   text-decoration: none;
   color: darkred;
-}
-
-#root {
-  margin: 0;
-  padding: 0;
 }
