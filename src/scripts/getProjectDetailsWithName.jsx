@@ -1,4 +1,4 @@
-const getProjectDetailsWithName = async (projectId, projectName) => {
+export const getProjectDetailsWithName = async (projectId, projectName) => {
   let convertedProjectName = projectName.replace(/ /g, "-");
   convertedProjectName = convertedProjectName
     .replace(/%20/g, "-")

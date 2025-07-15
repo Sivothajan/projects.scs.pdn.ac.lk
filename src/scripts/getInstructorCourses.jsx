@@ -1,4 +1,4 @@
-const getInstructorCourses = async (instructorUsername) => {
+export const getInstructorCourses = async (instructorUsername) => {
   const apiUrl = `${import.meta.env.VITE_API_URL}/courses/instructor/${instructorUsername}`;
   try {
     const response = await fetch(apiUrl);

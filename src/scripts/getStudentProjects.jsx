@@ -1,4 +1,4 @@
-const getStudentProjects = async (studentId) => {
+export const getStudentProjects = async (studentId) => {
   const apiUrl = `${import.meta.env.VITE_API_URL}/projects/student/${studentId}`;
   try {
     const response = await fetch(apiUrl);

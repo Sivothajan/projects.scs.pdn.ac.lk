@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import studentStyle from "./Student.module.css";
 import Error404 from "../Errors/Error404";
 import getStudentDetails from "../../scripts/getStudentDetails";
-import { checkImage } from "../../scripts/checkImage.jsx";
+import checkImage from "../../scripts/checkImage";
 
 function Student() {
   const { sNumber } = useParams();
@@ -40,16 +40,18 @@ function Student() {
         if (data) {
           setStudentName(data.name);
           setDepartment(data.department);
-          const baseUrl = "";
-          // const baseUrl = `https://stud.pdn.ac.lk/images/20${data.year}/Science/${data.sNumber.toUpperCase()}`;
+          //  const baseUrl = "";
+          //  const baseUrl = `https://stud.pdn.ac.lk/images/20${data.year}/Science/${data.sNumber.toUpperCase()}`;
           const tempProfilePictureUrl =
-            (await checkImage(`${baseUrl}.JPG`)) ||
-            (await checkImage(`${baseUrl}.jpg`))
-              ? `${baseUrl}.${(await checkImage(`${baseUrl}.JPG`)) ? "JPG" : "jpg"}`
-              : //  : "/images/placeholder.webp";
-                (await checkImage(`https://i.pravatar.cc/300?u=${sNumber}`))
-                ? `https://i.pravatar.cc/300?u=${sNumber}`
-                : "/images/placeholder.webp";
+            /*
+             (await checkImage(`${baseUrl}.JPG`)) ||
+             (await checkImage(`${baseUrl}.jpg`))
+               ? `${baseUrl}.${(await checkImage(`${baseUrl}.JPG`)) ? "JPG" : "jpg"}`
+              : "/images/placeholder.webp";
+            */
+            (await checkImage(`https://i.pravatar.cc/300?u=${sNumber}`))
+              ? `https://i.pravatar.cc/300?u=${sNumber}`
+              : "/images/placeholder.webp";
           setProfilePictureUrl(tempProfilePictureUrl);
 
           if (isValidS21SP513Format) {

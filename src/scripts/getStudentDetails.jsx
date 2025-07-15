@@ -1,4 +1,4 @@
-const getStudentDetails = async (studentId) => {
+export const getStudentDetails = async (studentId) => {
   const apiUrl = `${import.meta.env.VITE_API_URL}/student/${studentId.toLowerCase()}`;
   try {
     const response = await fetch(apiUrl);

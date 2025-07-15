@@ -1,4 +1,4 @@
-const getInstructorDetails = async () => {
+export const getInstructorDetails = async () => {
   const apiUrl = `${import.meta.env.VITE_API_URL}/instructors`;
   try {
     const response = await fetch(apiUrl);

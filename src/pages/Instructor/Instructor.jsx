@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import instructorStyle from "./Instructor.module.css";
 import Error404 from "../Errors/Error404";
-import getInstructorDetails from "../../scripts/getInstructorDetails.jsx";
+import getInstructorDetails from "../../scripts/getInstructorDetails";
+import checkImage from "../../scripts/checkImage";
 
 function Instructor() {
   const { instructorUsername } = useParams();
@@ -48,8 +49,9 @@ function Instructor() {
               ? '/images/placeholder.webp'
               : data.profilePictureUrl
             */
-            // "/images/placeholder.webp",
-            `https://i.pravatar.cc/300?u=${instructorUsername}`,
+            (await checkImage(`https://i.pravatar.cc/300?u=${instructorName}`))
+              ? `https://i.pravatar.cc/300?u=${instructorName}`
+              : "/images/placeholder.webp",
           );
           setSMail(data.email || "");
           setHasError(false);
@@ -65,7 +67,7 @@ function Instructor() {
     };
 
     fetchInstructorDetails();
-  }, [instructorUsername]);
+  }, [instructorUsername, instructorName]);
 
   if (loading) {
     return <div className={instructorStyle.loading}>Loading...</div>;

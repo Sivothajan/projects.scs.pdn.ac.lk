@@ -1,60 +1,66 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
-import Error404 from "./pages/Errors/Error404";
-import About from "./pages/About/About";
-import Documentation from "./pages/Documentation/Documentation";
-import Student from "./pages/Student/Student";
-import Instructor from "./pages/Instructor/Instructor";
-import Instructors from "./pages/Instructors/Instructors";
-import Course from "./pages/Course/Course";
-import Project from "./pages/Project/Project";
+import Loading from "./pages/Loading/Loading";
+
+const Home = lazy(() => import("./pages/Home/Home"));
+const About = lazy(() => import("./pages/About/About"));
+const Error404 = lazy(() => import("./pages/Errors/Error404"));
+const Documentation = lazy(() => import("./pages/Documentation/Documentation"));
+const Student = lazy(() => import("./pages/Student/Student"));
+const Instructor = lazy(() => import("./pages/Instructor/Instructor"));
+const Instructors = lazy(() => import("./pages/Instructors/Instructors"));
+const Course = lazy(() => import("./pages/Course/Course"));
+const Project = lazy(() => import("./pages/Project/Project"));
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/*" element={<Error404 />} />
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route caseSensitive={false} path="/about" element={<About />} />
-        <Route
-          caseSensitive={false}
-          path="/documentation"
-          element={<Documentation />}
-        />
+          <Route caseSensitive={false} path="/about" element={<About />} />
+          <Route
+            caseSensitive={false}
+            path="/documentation"
+            element={<Documentation />}
+          />
 
-        <Route
-          caseSensitive={false}
-          path="/student/:sNumber"
-          element={<Student />}
-        />
-        <Route
-          caseSensitive={false}
-          path="/instructor/:instructorUsername"
-          element={<Instructor />}
-        />
-        <Route
-          caseSensitive={false}
-          path="/instructors"
-          element={<Instructors />}
-        />
-        <Route
-          caseSensitive={false}
-          path="/course/:courseId"
-          element={<Course />}
-        />
-        <Route
-          caseSensitive={false}
-          path="/project/id/:projectId/n/:projectName"
-          element={<Project />}
-        />
-        <Route
-          caseSensitive={false}
-          path="/project/id/:projectId"
-          element={<Project />}
-        />
-      </Routes>
+          <Route
+            caseSensitive={false}
+            path="/student/:sNumber"
+            element={<Student />}
+          />
+          <Route
+            caseSensitive={false}
+            path="/instructor/:instructorUsername"
+            element={<Instructor />}
+          />
+          <Route
+            caseSensitive={false}
+            path="/instructors"
+            element={<Instructors />}
+          />
+          <Route
+            caseSensitive={false}
+            path="/course/:courseId"
+            element={<Course />}
+          />
+          <Route
+            caseSensitive={false}
+            path="/project/id/:projectId/n/:projectName"
+            element={<Project />}
+          />
+          <Route
+            caseSensitive={false}
+            path="/project/id/:projectId"
+            element={<Project />}
+          />
+
+          <Route path="/*" element={<Error404 />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
