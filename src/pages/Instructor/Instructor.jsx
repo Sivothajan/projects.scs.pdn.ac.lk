@@ -48,7 +48,8 @@ function Instructor() {
               ? '/images/placeholder.webp'
               : data.profilePictureUrl
             */
-            "/images/placeholder.webp",
+            // "/images/placeholder.webp",
+            `https://i.pravatar.cc/300?u=${instructorUsername}`,
           );
           setSMail(data.email || "");
           setHasError(false);

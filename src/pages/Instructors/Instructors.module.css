@@ -25,7 +25,7 @@
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background-color: #DAA520;
+  background-color: #daa520;
   border-radius: 2px;
 }
 
@@ -53,11 +53,11 @@
 .instructorCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  border-color: #DAA520;
+  border-color: #daa520;
 }
 
 .instructorCard:hover .profileImageContainer {
-  border-color: #DAA520;
+  border-color: #daa520;
 }
 
 .profileImageContainer {
@@ -91,7 +91,7 @@
 }
 
 .instructorCard:hover .instructorName {
-  color: #DAA520;
+  color: #daa520;
 }
 
 .instructorUsername {
@@ -103,7 +103,7 @@
 }
 
 .instructorCard:hover .instructorUsername {
-  color: #DAA520;
+  color: #daa520;
 }
 
 .loading {

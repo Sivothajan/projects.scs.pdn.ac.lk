@@ -46,7 +46,10 @@ function Student() {
             (await checkImage(`${baseUrl}.JPG`)) ||
             (await checkImage(`${baseUrl}.jpg`))
               ? `${baseUrl}.${(await checkImage(`${baseUrl}.JPG`)) ? "JPG" : "jpg"}`
-              : "/images/placeholder.webp";
+              : //  : "/images/placeholder.webp";
+                (await checkImage(`https://i.pravatar.cc/300?u=${sNumber}`))
+                ? `https://i.pravatar.cc/300?u=${sNumber}`
+                : "/images/placeholder.webp";
           setProfilePictureUrl(tempProfilePictureUrl);
 
           if (isValidS21SP513Format) {
