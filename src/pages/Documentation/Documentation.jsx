@@ -22,16 +22,15 @@ function Documentation() {
         <li>
           Clone and install:
           <code className={styles.code}>
-            git clone
-            https://github.com/pdn-scs/projects.scs.pdn.ac.lk-monorepo.git cd
-            projects.scs.pdn.ac.lk-monorepo npm run install:all
+            git clone https://github.com/pdn-scs/projects.scs.pdn.ac.lk.git cd
+            projects.scs.pdn.ac.lk npm run install:all
           </code>
         </li>
         <li>
           Configure environment:
           <code className={styles.code}>
-            cd frontend && cp .env.example .env cd ../backend && cp .env.example
-            .env
+            # Setup frontend environment cd frontend cp .env.example .env #
+            Setup backend environment cd ../backend cp .env.example .env
           </code>
         </li>
       </ol>
@@ -43,7 +42,7 @@ function Documentation() {
           <li>
             <code className={styles.code}>VITE_API_URL</code>
             <span className={styles.envDescription}>
-              Backend API URL (Default: http://localhost:3000)
+              Backend API URL (Default: `http://localhost:3000`)
             </span>
           </li>
         </ul>
@@ -72,18 +71,27 @@ function Documentation() {
       </div>
 
       <h2 className={styles.subtitle}>Development</h2>
-      <p className={styles.text}>Start the development servers:</p>
-      <code className={styles.code}>npm run dev</code>
+      <p className={styles.text}>Start all services:</p>
+      <code className={styles.code}>
+        npm run dev # Starts both frontend and all API versions
+      </code>
 
       <p className={styles.text}>Or start services individually:</p>
       <ul className={styles.list}>
         <li>
-          <code className={styles.code}>npm run dev:frontend</code> - Frontend
-          only
+          Frontend:
+          <code className={styles.code}>
+            npm run dev:frontend # Frontend only on port 5173
+          </code>
         </li>
         <li>
-          <code className={styles.code}>npm run dev:backend</code> - Backend
-          only
+          Backend:
+          <code className={styles.code}>
+            # All API versions npm run dev:backend # Starts main API (3000), v1
+            (3001), and v2 (3002) # Specific API versions npm run dev:backend:v1
+            # Start only v1 API on port 3001 npm run dev:backend:v2 # Start only
+            v2 API on port 3002
+          </code>
         </li>
       </ul>
 
@@ -93,12 +101,39 @@ function Documentation() {
           Frontend: <code className={styles.code}>http://localhost:5173</code>
         </li>
         <li>
-          Backend API:{" "}
-          <code className={styles.code}>http://localhost:3000</code>
+          Backend APIs:
+          <ul className={styles.sublist}>
+            <li>
+              Main API:{" "}
+              <code className={styles.code}>http://localhost:3000/api</code>
+            </li>
+            <li>
+              V1 API:{" "}
+              <code className={styles.code}>http://localhost:3001/api/v1</code>{" "}
+              (deprecated)
+            </li>
+            <li>
+              V2 API:{" "}
+              <code className={styles.code}>http://localhost:3002/api/v2</code>
+            </li>
+          </ul>
         </li>
         <li>
-          API Documentation:{" "}
-          <code className={styles.code}>http://localhost:3000/docs</code>
+          API Documentation:
+          <ul className={styles.sublist}>
+            <li>
+              OpenAPI Spec:{" "}
+              <code className={styles.code}>
+                http://localhost:3000/api/openapi.json
+              </code>
+            </li>
+            <li>
+              YAML Spec:{" "}
+              <code className={styles.code}>
+                http://localhost:3000/api/openapi.yaml
+              </code>
+            </li>
+          </ul>
         </li>
       </ul>
 
@@ -106,7 +141,7 @@ function Documentation() {
       <ul className={styles.list}>
         <li>
           <a
-            href="https://github.com/sivothajan/projects.scs.pdn.ac.lk-monorepo"
+            href="https://github.com/pdn-scs/projects.scs.pdn.ac.lk"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
@@ -116,12 +151,32 @@ function Documentation() {
         </li>
         <li>
           <a
-            href="https://github.com/sivothajan/projects.scs.pdn.ac.lk-monorepo/issues"
+            href="https://github.com/pdn-scs/projects.scs.pdn.ac.lk/issues"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
           >
             Issue Tracker
+          </a>
+        </li>
+        <li>
+          <a
+            href="/api/docs/backend"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            Backend API Documentation
+          </a>
+        </li>
+        <li>
+          <a
+            href="/api/docs/data"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            Data Structure Documentation
           </a>
         </li>
       </ul>

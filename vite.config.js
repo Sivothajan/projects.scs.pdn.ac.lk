@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   const ANALYZE = env.VITE_ANALYZE === "true";
+  const PORT = env.PORT || 3000;
 
   return {
     plugins: [
@@ -37,6 +38,20 @@ export default defineConfig(({ mode }) => {
     server: {
       port: 5173,
       open: true,
+      proxy: {
+        "/api/v1": {
+          target: `http://localhost:${PORT + 1}`,
+          changeOrigin: true,
+        },
+        "/api/v2": {
+          target: `http://localhost:${PORT + 2}`,
+          changeOrigin: true,
+        },
+        "/api": {
+          target: `http://localhost:${PORT}`,
+          changeOrigin: true,
+        },
+      },
     },
   };
 });

@@ -49,7 +49,11 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "vite --host --port 5173",
+    "dev:backend": "concurrently \"node api/apiRouter.js\" \"node api/v2/apiRouter.js\" \"node api/v1/apiRouter.js\"",
+    "dev:backend:v1": "node api/v1/apiRouter.js",
+    "dev:backend:v2": "node api/v2/apiRouter.js",
     "build": "cross-env NODE_ENV=production vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
@@ -64,16 +68,17 @@
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.7.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "@eslint/js": "^9.31.0",
-    "@vitejs/plugin-react": "^4.6.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -81,7 +86,7 @@
     "open-cli": "^8.0.0",
     "prettier": "^3.6.2",
     "rollup-plugin-visualizer": "^6.0.3",
-    "vite": "^7.0.4",
+    "vite": "^7.0.5",
     "vite-plugin-inspect": "^11.3.0"
   }
 }

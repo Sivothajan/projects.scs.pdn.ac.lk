@@ -281,9 +281,9 @@ v1Router.all(/.*/, (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 v1Router.listen(PORT, () => {
-  console.log(`Backend server is running on http://localhost:${PORT}`);
+  console.log(`Backend server is running on http://localhost:${PORT + 1}`);
 });
 
 export default v1Router;

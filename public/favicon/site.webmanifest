@@ -3,8 +3,8 @@
   "short_name": "Projects",
   "description": "A web app that  designed to support student projects tied to the Department of Statistics & Computer Science, Faculty of Science, University of Peradeniya.",
   "lang": "en-US",
-  "start_url": "https://projects.scs.sivothajan.me/",
-  "id": "https://projects.scs.sivothajan.me/",
+  "start_url": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.webp",

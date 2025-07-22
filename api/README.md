@@ -34,8 +34,9 @@
 ## Project Structure
 
 ```text
-backend/
+projects.scs.pdn.ac.lk/
 ├── api/                    # API routes and controllers
+│   ├── data/              # Data files for local development
 │   ├── v1/                # Version 1 API endpoints
 │   ├── v2/                # Version 2 API endpoints
 │   └── apiRouter.js       # Main API router
@@ -74,16 +75,27 @@ Required variables:
 - `USE_LOCAL_DATA`: Set to "true" to use local JSON files, "false" to use GitHub data
 - `GITHUB_TOKEN`: GitHub Personal Access Token (Required if USE_LOCAL_DATA=false)
 
-1. Start development servers:
+#### 3. Start development server
+
+Choose one of the following options to start the server:
 
 ```bash
-# Start all API versions
-npm run dev
+# Start all API versions concurrently
+npm run dev:backend    # Starts main API (3000), v1 (3001), and v2 (3002)
 
-# Start specific versions
-npm run dev:v1     # Version 1 API on port 3001
-npm run dev:v2     # Version 2 API on port 3002
+# Start specific API versions
+npm run dev:backend:v1 # Start only v1 API on port 3001
+npm run dev:backend:v2 # Start only v2 API on port 3002
+
+# For development with frontend
+npm run dev           # Starts both frontend and all API versions
 ```
+
+The servers will be available at:
+
+- Main API: `http://localhost:3000/api`
+- V1 API: `http://localhost:3001/api/v1`
+- V2 API: `http://localhost:3002/api/v2`
 
 ## API Documentation
 
@@ -91,13 +103,29 @@ npm run dev:v2     # Version 2 API on port 3002
 
 - Development:
   - Main API: `http://localhost:3000/api`
-  - V1 API: `http://localhost:3001/api/v1`
+  - V1 API: `http://localhost:3001/api/v1` (deprecated)
   - V2 API: `http://localhost:3002/api/v2`
-- Production: `https://api.projects.scs.pdn.ac.lk`
+- Production: `https://projects.scs.pdn.ac.lk/api`
 
 ### Available Endpoints
 
-The API is versioned (v1 and v2) with data served from JSON files.
+#### Root Endpoints
+
+- `GET /api` - Returns API information and available versions
+- `GET /api/openapi` or `/api/openapi.json` - OpenAPI specification in JSON format
+- `GET /api/openapi.yaml` - OpenAPI specification in YAML format
+
+Example response from root endpoint:
+
+```json
+{
+  "message": "Projects API",
+  "versions": {
+    "v1": "/api/v1",
+    "v2": "/api/v2"
+  }
+}
+```
 
 #### V1 Endpoints
 
@@ -140,10 +168,23 @@ V2 API follows OpenAPI/Swagger specification. For detailed documentation:
 
 ### Response Format
 
+API responses follow these formats:
+
+1. Success Response
+
 ```json
 {
-  "data": {}, // Response data
-  "error": null // Error message if any
+  "message": "Success message",
+  "data": {} // Optional response data
+}
+```
+
+1. Error Response
+
+```json
+{
+  "message": "Error description",
+  "error": "Error details"
 }
 ```
 

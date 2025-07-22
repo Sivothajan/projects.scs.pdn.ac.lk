@@ -6,11 +6,15 @@
 
 ## Project Overview
 
-### Production
+### Production URLs
 
-- Frontend: [https://projects.scs.sivothajan.me](https://projects.scs.sivothajan.me)
-- Backend: [https://projects.scs.api.sivothajan.me](https://projects.scs.api.sivothajan.me)
-- Documentation: [https://gh.sivothajan.me/projects.scs.pdn.ac.lk-monorepo#readme](https://gh.sivothajan.me/projects.scs.pdn.ac.lk-monorepo)
+[![Deployment Status](https://img.shields.io/github/deployments/sivothajan/projects.scs.pdn.ac.lk/production?label=deployment)](https://projects.scs.pdn.ac.lk)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+- Frontend: [https://projects.scs.pdn.ac.lk](https://projects.scs.pdn.ac.lk)
+- Backend API: [https://projects.scs.pdn.ac.lk/api](https://projects.scs.pdn.ac.lk/api)
+- Documentation: [https://projects.scs.pdn.ac.lk/documentation](https://projects.scs.pdn.ac.lk/documentation)
 
 ### Group Details
 
@@ -32,9 +36,25 @@ This project is designed to support student projects tied to the Department of S
 
 ### Core Technologies
 
-1. HTML - For structure and content
-2. CSS - For styling and layout
-3. JavaScript - For interactivity and logic
+#### Frontend
+
+- ![React](https://img.shields.io/badge/React-18.x-61dafb) - Modern UI development
+- ![Vite](https://img.shields.io/badge/Vite-4.x-646cff) - Fast build tooling
+- ![React Router](https://img.shields.io/badge/React_Router-7.x-ca4245) - Client-side routing
+- ![CSS Modules](https://img.shields.io/badge/CSS_Modules-Latest-000) - Scoped styling
+
+#### Backend
+
+- ![Node.js](https://img.shields.io/badge/Node.js-18.x-339933) - Runtime environment
+- ![Express](https://img.shields.io/badge/Express-4.x-000000) - API framework
+- ![OpenAPI](https://img.shields.io/badge/OpenAPI-3.x-6ba539) - API documentation
+
+#### Development Tools
+
+- ![ESLint](https://img.shields.io/badge/ESLint-Latest-4b32c3) - Code quality
+- ![Prettier](https://img.shields.io/badge/Prettier-Latest-f7b93e) - Code formatting
+- ![Git](https://img.shields.io/badge/Git-Latest-f05032) - Version control
+- ![Vercel](https://img.shields.io/badge/Vercel-Latest-000000) - Deployment
 
 ### Technical Constraints and Choices
 
@@ -45,6 +65,8 @@ This project is designed to support student projects tied to the Department of S
 
 2. Frontend Framework
    - React.js with Vite for enhanced development experience
+   - React Router for client-side navigation
+   - Component-based architecture for reusability and maintainability
    - CSS Modules for component-level styling
    - Focus on modern JavaScript features and best practices
 
@@ -99,27 +121,69 @@ This project is designed to support student projects tied to the Department of S
    - Search and filter functionality
    - Print-friendly stylesheets
 
-4. Instructor Page
+4. (All-in-one) Instructors Page
+   - Dynamic faculty profile cards with hover effects
+   - Custom-built tabbed interface for faculty details
+   - Contact form with JavaScript validation
+   - Responsive image handling using CSS
+
+5. Individual Instructor Page
    - Dynamic faculty profile cards
    - Custom-built tabbed interface
    - Contact form with JavaScript validation
    - Responsive image handling
 
-5. Student Page
-   - Interactive student directory
-   - Advanced filtering system
-   - Dynamic content loading
-   - Responsive data tables
-   - Custom pagination implementation
+6. Individual Student Page
+   - Dynamic student profile cards
+   - Custom-built tabbed interface for student details
+   - Contact form with JavaScript validation
+   - Responsive image handling
+
+7. Individual Course Page
+   - Dynamic course profile cards
+   - Custom-built tabbed interface for course details
+   - Responsive image handling
+   - Related projects section
+
+### Project Structure
+
+```text
+projects.scs.pdn.ac.lk/
+├── api/                    # Backend API implementation
+│   ├── data/              # JSON data files for development
+│   ├── v1/                # Version 1 API endpoints
+│   │   └── apiRouter.js   # V1 API router
+│   ├── v2/                # Version 2 API endpoints
+│   │   └── apiRouter.js   # V2 API router
+│   └── apiRouter.js       # Main API router
+├── src/                   # Frontend source code
+│   ├── components/        # Reusable React components
+│   ├── pages/            # Page components
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
+│   └── styles/           # Global styles and themes
+├── public/               # Static assets
+│   ├── images/          # Image assets
+│   └── favicon/         # Favicon files
+└── config/              # Configuration files
+    ├── eslint/          # ESLint configuration
+    └── vite/            # Vite configuration
+
+Key files:
+- package.json          # Project configuration
+- vite.config.js       # Vite build configuration
+- vercel.json          # Vercel deployment settings
+- .env.example         # Environment variables template
+```
 
 ### Technical Implementation
 
 1. React + Vite Architecture
-   - Component-based architecture using React
-   - Fast development with Vite's HMR (Hot Module Replacement)
-   - Optimized production builds
-   - Route management for seamless navigation
-   - Modern JavaScript features (ES6+)
+   - Modern component-based architecture
+   - Hot Module Replacement (HMR) for fast development
+   - Optimized production builds with code splitting
+   - React Router v7 for client-side navigation
+   - TypeScript for type safety
 
 2. HTML and Accessibility
    - Semantic HTML5 elements within React components
@@ -158,7 +222,8 @@ This project is designed to support student projects tied to the Department of S
 ## Development Guidelines
 
 1. Project Structure
-   - Monorepo architecture with separate frontend and backend folders
+   - Monorepo architecture with separate backend folder (api folder) in the root directory
+   - Frontend code organized in a src directory
    - Component-based organization following React best practices
    - Shared utilities and hooks in dedicated directories
    - Static assets management using Vite's public directory
@@ -172,20 +237,45 @@ This project is designed to support student projects tied to the Department of S
    - Consistent file naming (PascalCase for components, camelCase for utilities)
 
 3. Development Workflow
-   - Git branch strategy (main, develop, feature branches)
-   - Pull request reviews before merging
-   - Continuous integration checks
-   - Local development using Vite dev server
-   - Environment consistency using package.json scripts
 
-4. Quality Standards
+```bash
+# Install all dependencies
+npm run install:all
+
+# Start development servers
+npm run dev           # Start all services
+npm run dev:frontend  # Frontend only
+npm run dev:backend   # All API versions
+
+# Start specific API versions
+npm run dev:backend:v1  # V1 API only
+npm run dev:backend:v2  # V2 API only
+
+# Build for production
+npm run build        # Build all
+npm run build:frontend
+npm run build:backend
+
+# Deploy
+npm run deploy      # Deploy to Vercel
+```
+
+Local Development URLs:
+
+- Frontend: `http://localhost:5173`
+- Main API: `http://localhost:3000/api`
+- V1 API: `http://localhost:3001/api/v1`
+- V2 API: `http://localhost:3002/api/v2`
+- API Docs: `http://localhost:3000/api/docs`
+
+1. Quality Standards
    - ESLint configuration for code style
    - React best practices and patterns
    - Performance optimization guidelines
    - Cross-browser compatibility requirements
    - Accessibility compliance (WCAG 2.1)
 
-5. Documentation Requirements
+2. Documentation Requirements
    - Component documentation with JSDoc
    - README files for each major directory
    - API documentation for data structures
