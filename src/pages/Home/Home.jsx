@@ -50,7 +50,7 @@ function Home() {
           <br />
           <br />
           To contribute, please visit:{" "}
-          <a href="https://github.com/sivothajan/projects.scs.pdn.ac.lk-monorepo">
+          <a href="https://github.com/sivothajan/projects.scs.pdn.ac.lk">
             GitHub
           </a>
           <div className={styles.buttonsContainer}>

@@ -187,7 +187,7 @@ function Documentation() {
           Science, University of Peradeniya
           <br />
           <a
-            href="https://github.com/sivothajan/projects.scs.pdn.ac.lk-monorepo"
+            href="https://github.com/sivothajan/projects.scs.pdn.ac.lk"
             className={styles.link}
           >
             Source Code
